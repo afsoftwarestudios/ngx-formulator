@@ -1,0 +1,51 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "yarn"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "formulator": {
+      "projectType": "library",
+      "root": "projects/formulator",
+      "sourceRoot": "projects/formulator/src",
+      "prefix": "formulator",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/formulator/tsconfig.lib.json",
+            "project": "projects/formulator/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/formulator/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/formulator/src/test.ts",
+            "tsConfig": "projects/formulator/tsconfig.spec.json",
+            "karmaConfig": "projects/formulator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/formulator/tsconfig.lib.json",
+              "projects/formulator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "formulator"
+}
