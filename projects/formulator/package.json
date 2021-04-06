@@ -1,6 +1,11 @@
 {
-  "name": "formulator",
+  "name": "@afsoftwarestudios/formulator",
   "version": "0.0.1",
+  "author": "Aaron Furtado",
+  "license": "MIT",
+  "private": false,
+  "description": "An enhanced experience for Reactive Forms in Angular",
+  "repository": "https://github.com/afsoftwarestudios/ngx-formulator",
   "peerDependencies": {
     "@angular/common": "^11.2.8",
     "@angular/core": "^11.2.8"

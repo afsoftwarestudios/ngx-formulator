@@ -45,6 +45,126 @@
           }
         }
       }
+    },
+    "formulator-examples": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/formulator-examples",
+      "sourceRoot": "projects/formulator-examples/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/formulator-examples",
+            "index": "projects/formulator-examples/src/index.html",
+            "main": "projects/formulator-examples/src/main.ts",
+            "polyfills": "projects/formulator-examples/src/polyfills.ts",
+            "tsConfig": "projects/formulator-examples/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/formulator-examples/src/favicon.ico",
+              "projects/formulator-examples/src/assets"
+            ],
+            "styles": [
+              "projects/formulator-examples/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/formulator-examples/src/environments/environment.ts",
+                  "with": "projects/formulator-examples/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "formulator-examples:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "formulator-examples:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "formulator-examples:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/formulator-examples/src/test.ts",
+            "polyfills": "projects/formulator-examples/src/polyfills.ts",
+            "tsConfig": "projects/formulator-examples/tsconfig.spec.json",
+            "karmaConfig": "projects/formulator-examples/karma.conf.js",
+            "assets": [
+              "projects/formulator-examples/src/favicon.ico",
+              "projects/formulator-examples/src/assets"
+            ],
+            "styles": [
+              "projects/formulator-examples/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/formulator-examples/tsconfig.app.json",
+              "projects/formulator-examples/tsconfig.spec.json",
+              "projects/formulator-examples/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/formulator-examples/e2e/protractor.conf.js",
+            "devServerTarget": "formulator-examples:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "formulator-examples:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "formulator"
