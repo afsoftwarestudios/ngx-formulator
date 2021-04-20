@@ -1,7 +1,7 @@
 import {AsyncValidatorFn, FormControl, ValidatorFn, Validators} from '@angular/forms';
-import {XFormControlProperties} from '../../interfaces';
+import {XFormControlProperties} from '../../interfaces/interfaces.index';
 import {FormControlTypes} from '../../enums/form-control-types.enum';
-import {ValidatorUtility} from '../../utilitites';
+import {ValidatorUtility} from '../../utilitites/utilitites.index';
 
 export class XFormControl extends FormControl implements XFormControlProperties {
 
