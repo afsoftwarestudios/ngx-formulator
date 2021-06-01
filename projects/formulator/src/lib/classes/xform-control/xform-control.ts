@@ -8,15 +8,20 @@ export class XFormControl extends FormControl implements XFormControlProperties 
   formControlType: FormControlTypes;
   initialValue: string | number | boolean | string[] | number[] | boolean[] | null;
 
+  sequenceId: number;
+  label?: string;
+
   constructor(
     xFormControlProperties: XFormControlProperties,
   ) {
     super(
-      xFormControlProperties?.initialValue
+      xFormControlProperties.initialValue
     );
 
-    this.formControlType = xFormControlProperties?.formControlType;
-    this.initialValue = xFormControlProperties?.initialValue;
+    this.formControlType = xFormControlProperties.formControlType;
+    this.initialValue = xFormControlProperties.initialValue;
+
+    this.sequenceId = xFormControlProperties.sequenceId;
 
     this.initiateValidators(xFormControlProperties);
   }

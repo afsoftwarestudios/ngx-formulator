@@ -1,0 +1,5 @@
+<div *ngFor="let xFormControl of xFormGroup.controlsOrdered" [ngSwitch]="xFormControl.formControlType">
+  <ng-template [ngSwitchCase]="formControlTypesEnum.TEXT">
+    <formulator-text [xFormControl]="xFormControl"></formulator-text>
+  </ng-template>
+</div>

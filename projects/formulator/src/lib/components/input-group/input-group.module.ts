@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputGroupComponent } from './input-group.component';
+import {TextModule} from './input/text/text.module';
 
 
 
@@ -9,7 +10,8 @@ import { InputGroupComponent } from './input-group.component';
     InputGroupComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TextModule
   ]
 })
 export class InputGroupModule { }

@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@afsoftwarestudios/formulator@^0.0.2":
-  "integrity" "sha512-baBnNpKa8NvPiUGkJuq59iMjyq2P44LOiZC6GNBcbJVPOv02RvdhuV2n0s0vukYsvpMVzmI5xtiSIuyOL83iOQ=="
-  "resolved" "https://registry.npmjs.org/@afsoftwarestudios/formulator/-/formulator-0.0.2.tgz"
-  "version" "0.0.2"
+"@afsoftwarestudios/formulator@^0.0.3":
+  "integrity" "sha512-goyd3ux8fnHBTizvodQKTmj/G3vgq+yTsXuPSPPsTcTKK6DULs/HISfPnISH8e1COPn0EdscbgKvN+XyrQTVVA=="
+  "resolved" "https://registry.npmjs.org/@afsoftwarestudios/formulator/-/formulator-0.0.3.tgz"
+  "version" "0.0.3"
   dependencies:
     "tslib" "^2.0.0"
 
