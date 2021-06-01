@@ -1,6 +1,6 @@
 {
   "name": "ngx-formulator",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,11 +12,12 @@
     "adduser": "npm adduser",
     "publish": "npm publish ./dist/formulator --access public",
     "publish:dry": "npm run publish -- --dry-run",
+    "build:publish": "npm run build:prod && npm run publish",
     "audit:fix": "npm audit fix"
   },
   "private": true,
   "dependencies": {
-    "@afsoftwarestudios/formulator": "^0.0.4",
+    "@afsoftwarestudios/formulator": "^0.0.6",
     "@angular/animations": "~11.2.5",
     "@angular/common": "~11.2.5",
     "@angular/compiler": "~11.2.5",

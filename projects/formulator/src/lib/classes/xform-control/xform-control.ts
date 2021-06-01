@@ -23,6 +23,8 @@ export class XFormControl extends FormControl implements XFormControlProperties 
 
     this.sequenceId = xFormControlProperties.sequenceId;
 
+    this.label = xFormControlProperties.label;
+
     this.initiateValidators(xFormControlProperties);
   }
 

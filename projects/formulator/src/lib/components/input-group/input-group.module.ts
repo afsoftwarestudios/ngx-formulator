@@ -12,6 +12,9 @@ import {TextModule} from './input/text/text.module';
   imports: [
     CommonModule,
     TextModule
-  ]
+  ],
+  exports: [
+    InputGroupComponent
+  ],
 })
 export class InputGroupModule { }
