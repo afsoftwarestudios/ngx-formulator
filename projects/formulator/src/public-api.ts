@@ -10,3 +10,4 @@ export * from './lib/enums/enum.index';
 export * from './lib/interfaces/interfaces.index';
 export * from './lib/utilitites/utilitites.index';
 export * from './lib/classes/classes.index';
+export * from './lib/components/components.index';

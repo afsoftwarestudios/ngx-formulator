@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {simpleForm} from './form-templates/simple-form';
-import {FormArray, FormGroup} from '@angular/forms';
-import {XFormControl} from '@afsoftwarestudios/formulator';
+import {XFormControl, XFormGroup} from '@afsoftwarestudios/formulator';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +9,18 @@ import {XFormControl} from '@afsoftwarestudios/formulator';
 })
 export class AppComponent {
   title = 'formulator-examples';
-  form = new FormArray([]);
+  xFormGroup: XFormGroup;
 
   constructor() {
+    let controls: {[name: string]: XFormControl} = {};
     for (const simpleFormKey in simpleForm) {
       if (simpleForm.hasOwnProperty(simpleFormKey)) {
-        this.form.push(
-          new FormGroup({
-            [simpleFormKey]: new XFormControl(simpleForm[simpleFormKey])
-          })
-        );
+        controls = {
+          ...controls,
+          [simpleFormKey]: new XFormControl(simpleForm[simpleFormKey])
+        };
       }
     }
+    this.xFormGroup = new XFormGroup(controls);
   }
 }
